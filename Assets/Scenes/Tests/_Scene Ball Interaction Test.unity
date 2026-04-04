@@ -612,6 +612,7 @@ GameObject:
   - component: {fileID: 762975174}
   - component: {fileID: 762975173}
   - component: {fileID: 762975172}
+  - component: {fileID: 762975175}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -692,6 +693,23 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &762975175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762975170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b34c5b352046a48eba9afb62530f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.LookAroundHandle
+  character: {fileID: 2063038983}
+  cameraPivot: {fileID: 8731721001254041885}
+  sensitivity: 100
+  minCameraPivotPitch: -45
+  maxCameraPivotPitch: 30
 --- !u!1 &764225805
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,11 +906,11 @@ Transform:
   m_GameObject: {fileID: 1416674059}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08452788, y: -0, z: -0, w: 0.9964211}
-  m_LocalPosition: {x: 0.64, y: 4.23, z: -5.48}
+  m_LocalPosition: {x: 0.64, y: 2.73, z: -5.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2063038983}
+  m_Father: {fileID: 8731721001254041885}
   m_LocalEulerAnglesHint: {x: 9.698, y: 0, z: 0}
 --- !u!114 &1416674061
 MonoBehaviour:
@@ -1532,11 +1550,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7946382995340338614, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6088203837220551740, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1416674060}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
+--- !u!4 &8731721001254041885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6088203837220551740, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
+  m_PrefabInstance: {fileID: 8731721001254041884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

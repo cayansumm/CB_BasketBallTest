@@ -13,6 +13,8 @@ namespace BasketBallTest.Gameplay.Player.Interactions
 
         private IThrowable heldThrowable = null;
 
+        public IThrowable HeldThrowable => heldThrowable;
+        
         public void SetHeldThrowable(IThrowable throwable)
         {
             if (IsHoldingThrowable())
@@ -27,9 +29,9 @@ namespace BasketBallTest.Gameplay.Player.Interactions
             heldThrowable = throwable;
         }
 
-        private bool IsHoldingThrowable() => heldThrowable != null;
+        public bool IsHoldingThrowable() => heldThrowable != null;
 
-        private void RemoveHeldThrowable()
+        public void RemoveHeldThrowable()
         {
             if (IsHoldingThrowable() == false)
                 return;

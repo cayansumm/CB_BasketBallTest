@@ -44,6 +44,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
                 currentCameraPivotPitch =
                     Mathf.Clamp(currentCameraPivotPitch, minCameraPivotPitch, maxCameraPivotPitch);
             }
+
             cameraPivot.localEulerAngles = new Vector3(currentCameraPivotPitch, 0, 0);
         }
 
