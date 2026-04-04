@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1766293895421420459}
   - component: {fileID: 5330147167067246495}
   - component: {fileID: 1511271423595992911}
+  - component: {fileID: 5515656437723235541}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -170,9 +171,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1511271423595992911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +187,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Items.Ball
   ballBody: {fileID: 5330147167067246495}
+--- !u!114 &5515656437723235541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449886317862969284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d08e05d35f3a440aaac725faf6f916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.GravityModifier
+  rigidbody: {fileID: 5330147167067246495}
+  scale: 2
