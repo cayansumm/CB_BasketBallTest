@@ -7,6 +7,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
     {
         [SerializeField]
         private Rigidbody characterBody;
+
         [SerializeField, Min(0.01f)]
         private float speed = 10f;
 
@@ -28,7 +29,9 @@ namespace BasketBallTest.Gameplay.Player.Controls
 
         private void FixedUpdate()
         {
-            characterBody.linearVelocity = movementVector;
+            //Preserve Character's Y Velocity
+            var currentYVelcocity = characterBody.linearVelocity.y;
+            characterBody.linearVelocity = new Vector3(movementVector.x, currentYVelcocity, movementVector.z);
         }
     }
 }
