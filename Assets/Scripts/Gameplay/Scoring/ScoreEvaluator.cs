@@ -17,7 +17,7 @@ namespace BasketBallTest.Gameplay.Scoring
 
         private int EvaluateScore(Ball other)
         {
-            return 0;
+            return 1;
         }
 
         public void OnTriggerEnter(Collider other)
