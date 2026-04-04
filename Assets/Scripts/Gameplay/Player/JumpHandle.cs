@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace BasketBallTest.Gameplay.Player.Controls
@@ -6,6 +7,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
     {
         [SerializeField]
         private Rigidbody characterBody;
+        
         [SerializeField]
         private float jumpForce = 10f;
 
