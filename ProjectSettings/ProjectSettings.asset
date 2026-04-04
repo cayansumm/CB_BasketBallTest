@@ -847,8 +847,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: CB_BasketBallTest
-  metroPackageVersion: 
+  metroPackageName: CBBasketBallTest
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -856,7 +856,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: CB_BasketBallTest
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CB_BasketBallTest
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
