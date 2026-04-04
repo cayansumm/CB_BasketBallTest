@@ -1,0 +1,62 @@
+using BasketBallTest.Gameplay.Items;
+using UnityEngine;
+
+namespace BasketBallTest.Gameplay.Player.Interactions
+{
+    public class PickupThrowableHandle : MonoBehaviour
+    {
+        [SerializeField]
+        private ThrowableDetector detector;
+
+        [SerializeField]
+        private Transform heldThrowableParent;
+
+        private IThrowable heldThrowable = null;
+
+        public void SetHeldThrowable(IThrowable throwable)
+        {
+            if (IsHoldingThrowable())
+            {
+                RemoveHeldThrowable();
+            }
+
+            throwable.transform.SetParent(heldThrowableParent);
+            throwable.transform.localPosition = Vector3.zero;
+            throwable.ResetState();
+            throwable.SetStateToHeld();
+            heldThrowable = throwable;
+        }
+
+        private bool IsHoldingThrowable() => heldThrowable != null;
+
+        private void RemoveHeldThrowable()
+        {
+            if (IsHoldingThrowable() == false)
+                return;
+
+            heldThrowable.transform.parent = null;
+            heldThrowable = null;
+        }
+
+        private void OnThrowableDetected(IThrowable throwableitem)
+        {
+            if (IsHoldingThrowable())
+                return;
+            SetHeldThrowable(throwableitem);
+        }
+
+        private void Start()
+        {
+            detector.OnThrowableDetected += OnThrowableDetected;
+            detector.enabled = IsHoldingThrowable() == false;
+        }
+
+        private void OnDestroy()
+        {
+            if (detector != null)
+            {
+                detector.OnThrowableDetected -= OnThrowableDetected;
+            }
+        }
+    }
+}
