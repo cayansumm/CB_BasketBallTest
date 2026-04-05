@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 137898781676576328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0071864175, y: -0.42412013, z: 2.998541}
+  m_LocalPosition: {x: 0.0071864175, y: -0.8213854, z: 2.998541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53,7 +53,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.1769224, y: 0.28848112, z: 0.9741557}
-  m_Center: {x: 0.00018513192, y: -0.39726526, z: 0.022092374}
+  m_Center: {x: 0.00018513192, y: 0, z: 0.022092374}
 --- !u!114 &3799661647352033988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3271499016778649335}
   - component: {fileID: 3353226950011884564}
+  - component: {fileID: 786067915950784785}
   m_Layer: 0
   m_Name: BasketBall Hoop
   m_TagString: Untagged
@@ -126,6 +127,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &786067915950784785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217378089904008971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c00118c21a4408860fcc1bbc998ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Scoring.ScoreTracker
+  evaluators:
+  - {fileID: 3799661647352033988}
 --- !u!1001 &515731849273405203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ada48fd925f184d955f8c672424e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallHoopNet
-  linearDampening: 4
+  linearDampening: 6
   angularDampening: 1
 --- !u!1 &1858126426387010790 stripped
 GameObject:

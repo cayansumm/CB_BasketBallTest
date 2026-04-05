@@ -23,7 +23,6 @@ namespace BasketBallTest.Gameplay
 
         [SerializeField]
         private float linearDampening;
-
         [SerializeField]
         private float angularDampening;
 

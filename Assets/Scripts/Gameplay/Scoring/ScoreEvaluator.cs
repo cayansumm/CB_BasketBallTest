@@ -19,13 +19,33 @@ namespace BasketBallTest.Gameplay.Scoring
         {
             return 1;
         }
+        
+        private bool IsBallGoingInFromTheAbove(Ball ball, Rigidbody ballBody)
+        {
+            var toBallDirection = (ball.transform.position - transform.position).normalized;
+            var toBallDotProduct = Vector3.Dot(transform.up, toBallDirection);
+            Debug.Log(
+                $"transform.up: {transform.up},toBallDirection {toBallDirection}, ToBallDotProduct: {toBallDotProduct}",
+                gameObject);
+            var isBallFromTheTop = toBallDotProduct > 0;
+            if (isBallFromTheTop == false)
+                return false;
+
+            var ballNormalLinearVelocity = ballBody.linearVelocity.normalized;
+            var ballVelocityDotProduct = Vector3.Dot(transform.up, ballNormalLinearVelocity);
+            var isBallGoingToTheBottom = ballVelocityDotProduct < 0;
+            Debug.Log($"ToBallVelocityDotProduct: {ballVelocityDotProduct}", gameObject);
+            return isBallGoingToTheBottom;
+        }
 
         public void OnTriggerEnter(Collider other)
         {
-            var ball = other.gameObject.GetComponentInParent<Ball>();
+            var ball = other.attachedRigidbody.GetComponent<Ball>();
             if (ball == null)
                 return;
 
+            if (IsBallGoingInFromTheAbove(ball, other.attachedRigidbody) == false)
+                return;
 
             var score = EvaluateScore(ball);
             if (score > 0)
