@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3b71066d54d4a6c4c96d089a10362150, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -316,3 +316,4 @@ MonoBehaviour:
   audioSource: {fileID: 3469394423835517433}
   soundData: {fileID: 11400000, guid: 0e42f4da593c3f5469a84e20faf225db, type: 2}
   useOtherVelocity: 0
+  selfColliderFilter: []
