@@ -14,12 +14,11 @@ namespace BasketBallTest.Gameplay.Player.Controls
         private Transform characterTransform;
         private Vector3 movementVector;
 
+        private Vector2 inputVector;
+
         private void OnMove(InputValue value)
         {
-            var inputVector = value.Get<Vector2>();
-            var forwardVelocity = characterTransform.forward * inputVector.y;
-            var rightVelocity = characterTransform.right * inputVector.x;
-            movementVector = (forwardVelocity + rightVelocity) * speed;
+            inputVector = value.Get<Vector2>();
         }
 
         private void Start()
@@ -31,6 +30,10 @@ namespace BasketBallTest.Gameplay.Player.Controls
         {
             //Preserve Character's Y Velocity
             var currentYVelcocity = characterBody.linearVelocity.y;
+
+            var forwardVelocity = characterTransform.forward * inputVector.y;
+            var rightVelocity = characterTransform.right * inputVector.x;
+            movementVector = (forwardVelocity + rightVelocity) * speed;
             characterBody.linearVelocity = new Vector3(movementVector.x, currentYVelcocity, movementVector.z);
         }
     }
