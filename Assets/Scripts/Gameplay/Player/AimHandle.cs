@@ -7,17 +7,22 @@ namespace BasketBallTest.Gameplay.Player.Controls
     public class AimHandle : MonoBehaviour
     {
         public delegate void StateChange(bool isAiming);
+
         public event StateChange OnStateChange;
 
         public delegate void AimDirectionChange(Vector3 aimDirection);
+
         public event AimDirectionChange OnAimDirectionChange;
 
         [SerializeField]
         private Transform character;
+
         [SerializeField]
         private Transform aimPivot;
+
         [SerializeField]
         private Transform defaultAimTarget;
+
         [SerializeField]
         private float sensitivity;
 
@@ -25,25 +30,30 @@ namespace BasketBallTest.Gameplay.Player.Controls
         private bool isAiming;
         private Vector3 aimDirection;
 
-        public Vector3 AimDirection => aimDirection;
+        public Vector3 AimDirection
+        {
+            get
+            {
+                if (isAiming == false)
+                {
+                    ResetAimDirection();
+                }
+
+                return aimDirection;
+            }
+        }
+
         public Transform AimPivot => aimPivot;
 
         public void ResetAimDirection()
         {
-            localAimYOffset = GetYOffsetToAimTarget();
             aimDirection = CalculateAimDirection();
         }
 
         private Vector3 CalculateAimDirection()
         {
-            localAimYOffset = Mathf.Clamp(localAimYOffset, -1, 1);
-            return (aimPivot.forward + (aimPivot.up * localAimYOffset)).normalized;
-        }
-
-        private float GetYOffsetToAimTarget()
-        {
             var aimPivotToAimTarget = defaultAimTarget.position - aimPivot.position;
-            return aimPivotToAimTarget.normalized.y;
+            return aimPivotToAimTarget.normalized;
         }
 
         #region Input Implementation
@@ -59,10 +69,8 @@ namespace BasketBallTest.Gameplay.Player.Controls
         {
             if (isAiming == false)
                 return;
-
-            var inputVector = value.Get<Vector2>().normalized;
-            localAimYOffset -= inputVector.y * Time.deltaTime * sensitivity;
-            aimDirection = CalculateAimDirection();
+            
+            ResetAimDirection();
             OnAimDirectionChange?.Invoke(aimDirection);
         }
 
@@ -76,9 +84,16 @@ namespace BasketBallTest.Gameplay.Player.Controls
         private void OnDrawGizmosSelected()
         {
             var aimStartPoint = aimPivot.transform.position;
+
+            //To Aim Direction
             Gizmos.color = Color.yellow;
             var direction = CalculateAimDirection();
-            Gizmos.DrawLine(aimStartPoint, aimStartPoint + (direction * 3));
+            Gizmos.DrawLine(aimStartPoint, aimStartPoint + (direction.normalized * 10));
+
+            //To Aim Target
+            Gizmos.color = Color.blue;
+            var aimPivotToAimTarget = defaultAimTarget.position - aimPivot.position;
+            Gizmos.DrawLine(aimStartPoint, aimStartPoint + (aimPivotToAimTarget.normalized * 10));
         }
     }
 }

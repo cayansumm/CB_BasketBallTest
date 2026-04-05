@@ -27,6 +27,7 @@ namespace BasketBallTest.Gameplay.Player.Interactions
 
             throwable.transform.SetParent(heldThrowableParent);
             throwable.transform.localPosition = Vector3.zero;
+            throwable.transform.localRotation = Quaternion.identity;
             throwable.ResetState();
             throwable.SetStateToHeld();
             heldThrowable = throwable;
