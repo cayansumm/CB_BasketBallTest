@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.JumpHandle
   characterBody: {fileID: 0}
-  jumpForce: 1000
+  jumpForce: 1300
 --- !u!114 &8670005001634222235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   character: {fileID: 0}
   aimPivot: {fileID: 0}
   defaultAimTarget: {fileID: 0}
-  sensitivity: 0
+  sensitivity: 10
 --- !u!1 &8853402940571974632
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.AimVisualizer
   handle: {fileID: 5722172465963720547}
   guide: {fileID: 1176838709811114731}
-  guideLength: 26
+  guideLength: 8
 --- !u!120 &1176838709811114731
 LineRenderer:
   serializedVersion: 3
@@ -284,7 +284,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -308,11 +308,11 @@ LineRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 1.1154119, y: 1.377, z: -5.0727463}
+  - {x: 8.141628, y: 1.377, z: -1.2475286}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -330,8 +330,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9543287, g: 0.9811321, b: 0.42114633, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
