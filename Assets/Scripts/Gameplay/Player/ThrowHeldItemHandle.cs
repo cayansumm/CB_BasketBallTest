@@ -13,6 +13,9 @@ namespace BasketBallTest.Gameplay.Player.Controls
         private AimHandle aimHandle;
 
         [SerializeField]
+        private Transform throwPoint;
+
+        [SerializeField]
         private float throwForce;
 
         [SerializeField]
@@ -29,6 +32,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
                 return;
 
             var heldThrowable = pickupHandle.HeldThrowable;
+            heldThrowable.transform.position = throwPoint.position;
             pickupHandle.RemoveHeldThrowable();
             heldThrowable.Throw(aimHandle.AimDirection * throwForce, Vector3.right * spinForce);
         }

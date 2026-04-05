@@ -7,26 +7,22 @@ namespace BasketBallTest.Gameplay.Player.Controls
     public class AimHandle : MonoBehaviour
     {
         public delegate void StateChange(bool isAiming);
-
         public event StateChange OnStateChange;
 
         public delegate void AimDirectionChange(Vector3 aimDirection);
-
         public event AimDirectionChange OnAimDirectionChange;
 
         [SerializeField]
         private Transform character;
-
         [SerializeField]
         private Transform aimPivot;
-
+        [SerializeField]
+        private Transform defaultAimTarget;
         [SerializeField]
         private float sensitivity;
 
         private float localAimYOffset;
-        private float defaultLocalAimYOffset = 0f;
         private bool isAiming;
-
         private Vector3 aimDirection;
 
         public Vector3 AimDirection => aimDirection;
@@ -34,7 +30,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
 
         public void ResetAimDirection()
         {
-            localAimYOffset = defaultLocalAimYOffset;
+            localAimYOffset = GetYOffsetToAimTarget();
             aimDirection = CalculateAimDirection();
         }
 
@@ -42,6 +38,12 @@ namespace BasketBallTest.Gameplay.Player.Controls
         {
             localAimYOffset = Mathf.Clamp(localAimYOffset, -1, 1);
             return (aimPivot.forward + (aimPivot.up * localAimYOffset)).normalized;
+        }
+
+        private float GetYOffsetToAimTarget()
+        {
+            var aimPivotToAimTarget = defaultAimTarget.position - aimPivot.position;
+            return aimPivotToAimTarget.normalized.y;
         }
 
         #region Input Implementation
@@ -68,7 +70,6 @@ namespace BasketBallTest.Gameplay.Player.Controls
 
         private void Start()
         {
-            localAimYOffset = defaultLocalAimYOffset;
             isAiming = false;
         }
 
