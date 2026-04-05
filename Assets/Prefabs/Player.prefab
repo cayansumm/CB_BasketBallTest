@@ -191,7 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.ThrowHeldItemHandle
   pickupHandle: {fileID: 0}
   aimHandle: {fileID: 5722172465963720547}
-  throwForce: 100
+  throwPoint: {fileID: 0}
+  throwForce: 250
   spinForce: 100
 --- !u!114 &5722172465963720547
 MonoBehaviour:
@@ -207,6 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.AimHandle
   character: {fileID: 0}
   aimPivot: {fileID: 0}
+  defaultAimTarget: {fileID: 0}
+  sensitivity: 0
 --- !u!1 &8853402940571974632
 GameObject:
   m_ObjectHideFlags: 0
