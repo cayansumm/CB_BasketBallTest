@@ -1,3 +1,4 @@
+using System;
 using BasketBallTest.Gameplay.Items;
 using UnityEngine;
 
@@ -8,14 +9,14 @@ namespace BasketBallTest.Gameplay
         public delegate void ThrowableDetected(IThrowable throwableItem);
 
         public event ThrowableDetected OnThrowableDetected;
-        
-        private void OnCollisionEnter(Collision collision)
+
+        private void OnTriggerEnter(Collider other)
         {
-            var throwableItem = collision.gameObject.GetComponent<IThrowable>();
+            var throwableItem = other.attachedRigidbody?.GetComponent<IThrowable>() ?? null;
             if (throwableItem == null)
                 return;
 
-            Debug.Log($"Detected throwable item: {collision.gameObject.name}");
+            Debug.Log($"Detected throwable item: {other.gameObject.name}");
             OnThrowableDetected?.Invoke(throwableItem);
         }
     }
