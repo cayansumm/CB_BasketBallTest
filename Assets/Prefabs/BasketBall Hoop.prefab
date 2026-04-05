@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137898781676576328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0071864175, y: -0.42412013, z: 2.998541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.122734725, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 45746414297712888}
+  m_Father: {fileID: 5020425610625217903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8582078144965116799
 BoxCollider:
@@ -53,7 +53,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.1769224, y: 0.28848112, z: 0.9741557}
-  m_Center: {x: 0.00018513192, y: -0.39726526, z: 0.022092374}
+  m_Center: {x: 0.00018513192, y: 0, z: 0.022092374}
 --- !u!114 &3799661647352033988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +66,222 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef85b0e22f0e439fbb5e6bbbe274171c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Scoring.ScoreEvaluator
+  basketBallHoopNet: {fileID: 5262436753694538950}
+--- !u!1 &3766305687281105262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5755654225187637249}
+  - component: {fileID: 6512555684945347599}
+  - component: {fileID: 7365994566649430949}
+  m_Layer: 0
+  m_Name: NetAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5755654225187637249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766305687281105262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.004000008, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5020425610625217903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6512555684945347599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766305687281105262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5377907935664d8f95bc025956d1e396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.NetSwishSoundHandle
+  scoreEvaluator: {fileID: 5262436753694538950}
+  audioSource: {fileID: 7365994566649430949}
+  audioClip: {fileID: 8300000, guid: 143d9886eefe84c4ba5aa6972d4a5844, type: 3}
+--- !u!82 &7365994566649430949
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766305687281105262}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.8
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &8051325406395156115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5020425610625217903}
+  - component: {fileID: 6434306985600508920}
+  - component: {fileID: 5262436753694538950}
+  m_Layer: 0
+  m_Name: NetHandle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5020425610625217903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051325406395156115}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5755654225187637249}
+  - {fileID: 9190222464080465728}
+  m_Father: {fileID: 3643343885100960391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6434306985600508920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051325406395156115}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1769224, y: 0.28848112, z: 0.9741557}
+  m_Center: {x: 0.00018513192, y: 0, z: 0.022092374}
+--- !u!114 &5262436753694538950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051325406395156115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ada48fd925f184d955f8c672424e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallHoopNet
+  linearDampening: 6
+  angularDampening: 1
 --- !u!1 &8217378089904008971
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +292,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3271499016778649335}
   - component: {fileID: 3353226950011884564}
+  - component: {fileID: 786067915950784785}
+  - component: {fileID: 4268102723989471155}
+  - component: {fileID: 1996480441577392848}
   m_Layer: 0
   m_Name: BasketBall Hoop
   m_TagString: Untagged
@@ -126,6 +345,56 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &786067915950784785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217378089904008971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c00118c21a4408860fcc1bbc998ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Scoring.ScoreTracker
+  evaluators:
+  - {fileID: 3799661647352033988}
+--- !u!114 &4268102723989471155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217378089904008971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2c0f0b65af6d449a4e73385e619326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Audio.CollisionHitSoundHandle
+  rigidbody: {fileID: 3353226950011884564}
+  audioSource: {fileID: 3651690091800397113}
+  soundData: {fileID: 11400000, guid: bee2dabfe06cc034a8ff98e0191a5c65, type: 2}
+  useOtherVelocity: 1
+  selfColliderFilter:
+  - {fileID: 9153429345882276313}
+--- !u!114 &1996480441577392848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217378089904008971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2c0f0b65af6d449a4e73385e619326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Audio.CollisionHitSoundHandle
+  rigidbody: {fileID: 3353226950011884564}
+  audioSource: {fileID: 1089709432578636658}
+  soundData: {fileID: 11400000, guid: ed6cf86f7e041b241900eb2cd96891e9, type: 2}
+  useOtherVelocity: 1
+  selfColliderFilter:
+  - {fileID: 5987785071095719182}
 --- !u!1001 &515731849273405203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,6 +492,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1442834753168793878, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+      propertyPath: m_Name
+      value: Net
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442834753168793878, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -297,25 +570,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 3866338732722562452, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9190222464080465728}
+      addedObject: {fileID: 5020425610625217903}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -8343157778224352216, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9153429345882276313}
+    - targetCorrespondingSourceObject: {fileID: -8343157778224352216, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3651690091800397113}
     - targetCorrespondingSourceObject: {fileID: 2225160028646259701, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       insertIndex: -1
       addedObject: {fileID: 903948824586933617}
     - targetCorrespondingSourceObject: {fileID: -2851353466406023723, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5987785071095719182}
-    - targetCorrespondingSourceObject: {fileID: 1442834753168793878, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -2851353466406023723, guid: 36bc462c78889654495683bc7cfac176, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7094630899209688874}
-    - targetCorrespondingSourceObject: {fileID: 1442834753168793878, guid: 36bc462c78889654495683bc7cfac176, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8408225723080707166}
+      addedObject: {fileID: 1089709432578636658}
   m_SourcePrefab: {fileID: 100100000, guid: 36bc462c78889654495683bc7cfac176, type: 3}
 --- !u!4 &45746414297712888 stripped
 Transform:
@@ -348,46 +621,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9769757, y: 0.15270713, z: 1.4419618}
   m_Center: {x: 0.00000017875749, y: 0.015153907, z: 0.000000029096576}
---- !u!1 &1381978304642092549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1442834753168793878, guid: 36bc462c78889654495683bc7cfac176, type: 3}
-  m_PrefabInstance: {fileID: 515731849273405203}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &7094630899209688874
-BoxCollider:
+--- !u!82 &3651690091800397113
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381978304642092549}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 801387115998714683}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1769224, y: 0.28848112, z: 0.9741557}
-  m_Center: {x: 0.00018513192, y: -0.52, z: 0.022092374}
---- !u!114 &8408225723080707166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381978304642092549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ada48fd925f184d955f8c672424e35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasketBallHoopNet
-  linearDampening: 4
-  angularDampening: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1858126426387010790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2225160028646259701, guid: 36bc462c78889654495683bc7cfac176, type: 3}
@@ -414,6 +744,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.17991444, y: 0.3007152, z: 0.34624073}
   m_Center: {x: 0.24251805, y: -0.0050353087, z: -0.0019789462}
+--- !u!4 &3643343885100960391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3866338732722562452, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+  m_PrefabInstance: {fileID: 515731849273405203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6865115597357818566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2851353466406023723, guid: 36bc462c78889654495683bc7cfac176, type: 3}
@@ -441,3 +776,100 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7505178035815405708, guid: 36bc462c78889654495683bc7cfac176, type: 3}
+--- !u!82 &1089709432578636658
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865115597357818566}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -1,3 +1,4 @@
+using System;
 using BasketBallTest.Gameplay.Items;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ namespace BasketBallTest.Gameplay.Scoring
 
         public event ScoreGiven OnScoreGiven;
 
+        [SerializeField]
+        private BasketBallHoopNet basketBallHoopNet;
+
         //For Debug purposes to check if scores where evaluated;
         private int totalScoreEvaluated;
 
@@ -20,12 +24,11 @@ namespace BasketBallTest.Gameplay.Scoring
             return 1;
         }
 
-        public void OnTriggerEnter(Collider other)
+        private void OnObjectEnteredNet(GameObject objectentered)
         {
-            var ball = other.gameObject.GetComponentInParent<Ball>();
+            var ball = objectentered.GetComponent<Ball>();
             if (ball == null)
                 return;
-
 
             var score = EvaluateScore(ball);
             if (score > 0)
@@ -33,6 +36,16 @@ namespace BasketBallTest.Gameplay.Scoring
                 OnScoreGiven?.Invoke(score);
                 totalScoreEvaluated += score;
             }
+        }
+
+        private void OnEnable()
+        {
+            basketBallHoopNet.OnObjectEntered += OnObjectEnteredNet;
+        }
+
+        private void OnDisable()
+        {
+            basketBallHoopNet.OnObjectEntered -= OnObjectEnteredNet;
         }
     }
 }
