@@ -37,5 +37,13 @@ namespace BasketBallTest.Gameplay.Player.Controls
         {
             pickupHandle.NewItemPickedup += OnNewItemPickedup;
         }
+
+        private void OnDestroy()
+        {
+            if (pickupHandle != null)
+            {
+                pickupHandle.NewItemPickedup -= OnNewItemPickedup;
+            }
+        }
     }
 }
