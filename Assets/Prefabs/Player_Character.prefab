@@ -577,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8449915366975768401}
   - component: {fileID: 172501166163283391}
+  - component: {fileID: 704579014962244634}
   m_Layer: 0
   m_Name: Behaviour
   m_TagString: Untagged
@@ -614,6 +615,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Interactions.PickupThrowableHandle
   detector: {fileID: 5598890313715861127}
   heldThrowableParent: {fileID: 810837106682788396}
+--- !u!114 &704579014962244634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933287581559653917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1023461192014ed0b5b909f943ce99d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.MidairWallUnstickHandle
+  bodyCollider: {fileID: 1344388589788086422}
+  groundChecker: {fileID: 6315978551002436123}
+  onGroundMaterial: {fileID: 13400000, guid: cb5e753c4133fb843b8031a352b4e4b4, type: 2}
+  onAirMaterial: {fileID: 13400000, guid: fa8f1a26b5aee3f4fbf21b9e478fdda2, type: 2}
 --- !u!1 &7243277715474509817
 GameObject:
   m_ObjectHideFlags: 0
