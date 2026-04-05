@@ -1,3 +1,4 @@
+using System;
 using BasketBallTest.Gameplay.Items;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace BasketBallTest.Gameplay.Player.Interactions
 {
     public class PickupThrowableHandle : MonoBehaviour
     {
+        public event Action NewItemPickedup;
+
         [SerializeField]
         private ThrowableDetector detector;
 
@@ -14,7 +17,7 @@ namespace BasketBallTest.Gameplay.Player.Interactions
         private IThrowable heldThrowable = null;
 
         public IThrowable HeldThrowable => heldThrowable;
-        
+
         public void SetHeldThrowable(IThrowable throwable)
         {
             if (IsHoldingThrowable())
@@ -27,6 +30,7 @@ namespace BasketBallTest.Gameplay.Player.Interactions
             throwable.ResetState();
             throwable.SetStateToHeld();
             heldThrowable = throwable;
+            NewItemPickedup?.Invoke();
         }
 
         public bool IsHoldingThrowable() => heldThrowable != null;
