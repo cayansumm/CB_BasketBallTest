@@ -7,12 +7,18 @@ namespace BasketBallTest.Gameplay.Player.Controls
     {
         [SerializeField]
         private Rigidbody characterBody;
-        
+
+        [SerializeField]
+        private CharacterState characterState;
+
         [SerializeField]
         private float jumpForce = 10f;
 
         private void OnJump()
         {
+            if (characterState.IsGrounded == false)
+                return;
+
             characterBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
