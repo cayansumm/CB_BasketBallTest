@@ -31,7 +31,7 @@ namespace BasketBallTest.Gameplay.Player.Controls
             var heldThrowable = pickupHandle.HeldThrowable;
             heldThrowable.transform.position = throwPoint.position;
             pickupHandle.RemoveHeldThrowable();
-            heldThrowable.Throw(aimHandle.AimDirection * throwForce, -heldThrowable.transform.forward * spinForce);
+            heldThrowable.Throw(aimHandle.AimDirection * throwForce, -heldThrowable.transform.right * spinForce);
         }
 
         private void Start()
