@@ -1,3 +1,4 @@
+using System;
 using BasketBallTest.Gameplay.Items;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ namespace BasketBallTest.Gameplay.Scoring
 
         public event ScoreGiven OnScoreGiven;
 
+        [SerializeField]
+        private BasketBallHoopNet basketBallHoopNet;
+
         //For Debug purposes to check if scores where evaluated;
         private int totalScoreEvaluated;
 
@@ -19,32 +23,11 @@ namespace BasketBallTest.Gameplay.Scoring
         {
             return 1;
         }
-        
-        private bool IsBallGoingInFromTheAbove(Ball ball, Rigidbody ballBody)
-        {
-            var toBallDirection = (ball.transform.position - transform.position).normalized;
-            var toBallDotProduct = Vector3.Dot(transform.up, toBallDirection);
-            Debug.Log(
-                $"transform.up: {transform.up},toBallDirection {toBallDirection}, ToBallDotProduct: {toBallDotProduct}",
-                gameObject);
-            var isBallFromTheTop = toBallDotProduct > 0;
-            if (isBallFromTheTop == false)
-                return false;
 
-            var ballNormalLinearVelocity = ballBody.linearVelocity.normalized;
-            var ballVelocityDotProduct = Vector3.Dot(transform.up, ballNormalLinearVelocity);
-            var isBallGoingToTheBottom = ballVelocityDotProduct < 0;
-            Debug.Log($"ToBallVelocityDotProduct: {ballVelocityDotProduct}", gameObject);
-            return isBallGoingToTheBottom;
-        }
-
-        public void OnTriggerEnter(Collider other)
+        private void OnObjectEnteredNet(GameObject objectentered)
         {
-            var ball = other.attachedRigidbody.GetComponent<Ball>();
+            var ball = objectentered.GetComponent<Ball>();
             if (ball == null)
-                return;
-
-            if (IsBallGoingInFromTheAbove(ball, other.attachedRigidbody) == false)
                 return;
 
             var score = EvaluateScore(ball);
@@ -53,6 +36,16 @@ namespace BasketBallTest.Gameplay.Scoring
                 OnScoreGiven?.Invoke(score);
                 totalScoreEvaluated += score;
             }
+        }
+
+        private void OnEnable()
+        {
+            basketBallHoopNet.OnObjectEntered += OnObjectEnteredNet;
+        }
+
+        private void OnDisable()
+        {
+            basketBallHoopNet.OnObjectEntered -= OnObjectEnteredNet;
         }
     }
 }
