@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7016377420289873388}
   - component: {fileID: 1050254400942459490}
   - component: {fileID: 3693231609439732069}
+  - component: {fileID: 1062795304489058085}
   - component: {fileID: 6730362776592771293}
   - component: {fileID: 8670005001634222235}
   - component: {fileID: 7398526878621094135}
@@ -160,6 +161,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.CharacterMovementHandle
   characterBody: {fileID: 0}
   speed: 10
+--- !u!114 &1062795304489058085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449373483673586362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f948a32f15490f97a8bd209adbae8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.CharacterSprintHandle
+  movementHandle: {fileID: 3693231609439732069}
+  groundChecker: {fileID: 0}
+  sprintMultiplier: 1.5
 --- !u!114 &6730362776592771293
 MonoBehaviour:
   m_ObjectHideFlags: 0
