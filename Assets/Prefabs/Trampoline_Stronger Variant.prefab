@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2235235150139641877
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43999958
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097692590675885239, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4618041778298387570, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: bounceForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889749328690947211, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e1d44314bcce7f04882d16ae69fc7f37, type: 2}
+    - target: {fileID: 7379709642588431126, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}
+      propertyPath: m_Name
+      value: Trampoline_Stronger Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af74e83bc6d302a4cbce94c8df087b1e, type: 3}

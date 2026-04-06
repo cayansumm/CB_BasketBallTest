@@ -10,10 +10,6 @@ namespace BasketBallTest.Gameplay.Player.Controls
 
         public event StateChange OnStateChange;
 
-        public delegate void AimDirectionChange(Vector3 aimDirection);
-
-        public event AimDirectionChange OnAimDirectionChange;
-
         [SerializeField]
         private Transform character;
 
@@ -71,7 +67,6 @@ namespace BasketBallTest.Gameplay.Player.Controls
                 return;
             
             ResetAimDirection();
-            OnAimDirectionChange?.Invoke(aimDirection);
         }
 
         #endregion

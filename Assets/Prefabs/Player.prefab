@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.JumpHandle
   characterBody: {fileID: 0}
   characterState: {fileID: 5849645762173677103}
-  jumpForce: 1300
+  jumpForce: 156
 --- !u!114 &8670005001634222235
 MonoBehaviour:
   m_ObjectHideFlags: 0

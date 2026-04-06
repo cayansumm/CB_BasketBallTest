@@ -18,7 +18,7 @@ namespace BasketBallTest.Gameplay.Scoring
         private void OnScoreGiven(int score)
         {
             currentScore += score;
-            OnScoreChanged?.Invoke(score);
+            OnScoreChanged?.Invoke(currentScore);
         }
 
         private void OnEnable()
