@@ -40,7 +40,7 @@ namespace BasketBallTest.Gameplay.Environment
             {
                 goingForward = true;
             }
-            else if (destinationPositionIndex == localPositions.Length && goingForward)
+            else if (destinationPositionIndex == localPositions.Length - 1 && goingForward)
             {
                 goingForward = false;
             }
