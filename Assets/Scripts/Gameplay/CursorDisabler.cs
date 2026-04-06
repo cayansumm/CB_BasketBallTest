@@ -1,16 +1,31 @@
 using UnityEngine;
 
-public class CursorDisabler : MonoBehaviour
+namespace BasketBallTest.Gameplay.UI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class CursorToggler : MonoBehaviour
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+        [SerializeField]
+        private bool startAsHidden;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public void HideCursor()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        public void ShowCursor()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            if (startAsHidden)
+            {
+                HideCursor();
+            }
+        }
     }
 }

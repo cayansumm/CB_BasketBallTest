@@ -32,11 +32,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5895316162107165240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -126, y: -47}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -8, y: 0.3605957}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &6372184233713733131
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score
+  m_text: 'Total Score:
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -92,15 +94,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -148,6 +150,7 @@ GameObject:
   - component: {fileID: 5895316162107165240}
   - component: {fileID: 1743854107340080126}
   - component: {fileID: 1398776649483267628}
+  - component: {fileID: 6258100908542037800}
   m_Layer: 5
   m_Name: ScoreUI
   m_TagString: Untagged
@@ -211,8 +214,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2343ed3dd4a4f54bc74d56a191e48aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Scoring.ScoreUI
-  tracker: {fileID: 0}
+  tracker: {fileID: 6258100908542037800}
   scoreText: {fileID: 9140031590904620492}
+--- !u!114 &6258100908542037800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654838686214792567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c00118c21a4408860fcc1bbc998ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Scoring.ScoreTracker
+  evaluators: []
 --- !u!1 &8465047655630639372
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,11 +261,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5895316162107165240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -126, y: -98}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -5, y: 1}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &4087457241469804766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -305,15 +321,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
