@@ -14,22 +14,35 @@ namespace BasketBallTest.Debugger
         [SerializeField]
         private float launchForce = 100;
 
+        [SerializeField]
+        private float spinForce = 100;
+
+        [SerializeField]
+        private bool useForward;
+
         private void OnEnable()
         {
-            ballBody.AddForce(ballLaunchDirection.normalized * launchForce, ForceMode.Impulse);
+            ballBody.linearVelocity = Vector3.zero;
+            ballBody.angularVelocity = Vector3.zero;
+            ballBody.transform.position = transform.position;
+            ballBody.transform.localRotation = Quaternion.identity;
+            var launchDirection = useForward ? transform.forward : ballLaunchDirection.normalized;
+            ballBody.AddForce(launchDirection * launchForce, ForceMode.Impulse);
+            ballBody.AddTorque(-ballBody.transform.right * spinForce, ForceMode.Impulse);
         }
 
         private void OnDrawGizmosSelected()
         {
             if (ballBody != null)
             {
-                var ballPosition = ballBody.transform.position;
+                var position = transform.position;
 
                 Gizmos.color = Color.yellow;
 
-                var launchDirection = ballLaunchDirection.normalized;
-                var lineEndpoint = ballPosition + launchDirection * 3f;
-                Gizmos.DrawLine(ballPosition, lineEndpoint);
+                var launchDirection = useForward ? transform.forward : ballLaunchDirection.normalized;
+                ;
+                var lineEndpoint = position + launchDirection * 3f;
+                Gizmos.DrawLine(position, lineEndpoint);
 
                 var cubeSize = Vector3.one * 0.5f;
                 Gizmos.DrawCube(lineEndpoint, cubeSize);

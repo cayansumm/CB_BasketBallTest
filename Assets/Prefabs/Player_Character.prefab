@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 6315978551002436123}
   m_Layer: 0
   m_Name: Player_Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,7 +420,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2576111973818616264}
   serializedVersion: 5
-  m_Mass: 100
+  m_Mass: 12
   m_LinearDamping: 0
   m_AngularDamping: 1000
   m_CenterOfMass: {x: 0, y: 0, z: 0}

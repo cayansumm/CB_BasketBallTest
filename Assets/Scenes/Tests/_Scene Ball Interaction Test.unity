@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449886317862969284, guid: b1022b49f32db2e43b36790c4fdb6bc9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1319,6 +1319,54 @@ Transform:
   - {fileID: 1325963338}
   m_Father: {fileID: 1902365381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &696817275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696817276}
+  - component: {fileID: 696817277}
+  m_Layer: 0
+  m_Name: Modules
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &696817276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696817275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1631003094}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696817277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696817275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87810da138f047559dccb7cb030250e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.Player.Controls.ThrowForceChargeHandle
+  minForce: 200
+  maxForce: 500
+  forceChargeDuration: 3
+  currentForce: 0
 --- !u!1 &764225805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,6 +2713,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596242108}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1631003094 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9057622402408501321, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
+  m_PrefabInstance: {fileID: 7690234832418120200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1670210954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3324,7 +3377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449886317862969284, guid: b1022b49f32db2e43b36790c4fdb6bc9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3563,26 +3616,6 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].y
       value: 3.017
       objectReference: {fileID: 0}
-    - target: {fileID: 1176838709811114731, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime2
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176838709811114731, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: m_Parameters.colorGradient.key2.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176838709811114731, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: m_Parameters.colorGradient.key2.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176838709811114731, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: m_Parameters.colorGradient.key2.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176838709811114731, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: m_Parameters.colorGradient.m_ColorSpace
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 3618394007974413325, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3603,14 +3636,14 @@ PrefabInstance:
       propertyPath: defaultAimTarget
       value: 
       objectReference: {fileID: 502723025}
+    - target: {fileID: 5849645762173677103, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
+      propertyPath: groundChecker
+      value: 
+      objectReference: {fileID: 8731721001254041886}
     - target: {fileID: 6730362776592771293, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
       propertyPath: characterBody
       value: 
       objectReference: {fileID: 2063038981}
-    - target: {fileID: 7398526878621094135, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
-      propertyPath: spinForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7398526878621094135, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
       propertyPath: throwPoint
       value: 
@@ -3619,6 +3652,14 @@ PrefabInstance:
       propertyPath: pickupHandle
       value: 
       objectReference: {fileID: 1820857109}
+    - target: {fileID: 7398526878621094135, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
+      propertyPath: defaultThrowForce
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398526878621094135, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
+      propertyPath: forceChargeHandle
+      value: 
+      objectReference: {fileID: 696817277}
     - target: {fileID: 8670005001634222235, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
       propertyPath: character
       value: 
@@ -3669,7 +3710,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9057622402408501321, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 696817276}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7648f1b2d394f14d8e2ca5acb82ce75, type: 3}
 --- !u!1001 &8731721001254041884
@@ -3724,6 +3768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8204076541686500729, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3737,6 +3785,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6088203837220551740, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
   m_PrefabInstance: {fileID: 8731721001254041884}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8731721001254041886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6315978551002436123, guid: 5811b74be9156fb409d812944228ac5d, type: 3}
+  m_PrefabInstance: {fileID: 8731721001254041884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7296806e9ad988e4796431c68e731e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasketBallTest.Gameplay.GroundChecker
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
